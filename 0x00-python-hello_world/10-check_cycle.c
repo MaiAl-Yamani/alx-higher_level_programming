@@ -7,14 +7,15 @@
  */
 int check_cycle(listint_t *list)
 {
-	while (list != NULL)
+	listint_t *slow_ptr = list;
+	listint_t *fast_ptr = list;
+
+	while (slow_ptr && fast_ptr && fast_ptr->next)
 	{
-		if (list->flag == 1)
+		slow_ptr = slow_ptr->next;
+		fast_ptr = fast_ptr->next->next;
+		if (slow_ptr == fast_ptr)
 			return (1);
-
-		list->flag = 1;
-		list = list->next;
 	}
-
 	return (0);
 }
