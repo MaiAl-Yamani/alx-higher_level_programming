@@ -7,6 +7,6 @@ def uppercase(str):
             new_str += chr(str_ascii)
         else:
             new_str += str[ch]
-            
+
     print("{}".format(new_str))
     return new_str
