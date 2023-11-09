@@ -19,6 +19,9 @@ def rom_val(r):
 
 def roman_to_int(roman_string):
     roman_list = ['I', 'V', 'X', 'L', 'C', 'D', 'M']
+    if (not isinstance(roman_string, str) or
+            roman_string is None):
+        return 0
     for i in range(len(roman_string)):
         if roman_string[i] not in roman_list:
             return 0
