@@ -25,10 +25,12 @@ class Square:
 
     @property
     def size(self):
+        """size getter"""
         return self.__size
 
     @size.setter
     def size(self, size):
+        """size setter"""
         if type(size) != int:
             raise TypeError('size must be an integer')
         if size < 0:
@@ -37,10 +39,12 @@ class Square:
 
     @property
     def position(self):
+        """position getter"""
         return self.__position
 
     @position.setter
     def position(self, value):
+        """position setter"""
         if type(value) != tuple or len(value) != 2 or \
                 not all([type(i) == int for i in value]) or \
                 not all([i >= 0 for i in value]):
@@ -48,9 +52,11 @@ class Square:
         self.__position = value
 
     def area(self):
+        """returns square area"""
         return self.__size * self.__size
 
     def my_print(self):
+        """prints to stdout square using #"""
         if self.__size == 0:
             print()
         else:
