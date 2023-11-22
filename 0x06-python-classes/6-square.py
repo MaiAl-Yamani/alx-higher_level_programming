@@ -20,6 +20,7 @@ class Square:
     There is a position offset on left and top of the square.
     """
     def __init__(self, size=0, position=(0, 0)):
+        """initialization method"""
         self.__size = size
         self.__position = position
 
