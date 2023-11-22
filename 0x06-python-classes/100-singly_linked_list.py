@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-This is singly_linked_list module.
-"""
+"""This is singly_linked_list module."""
 
 
 class Node:
