@@ -86,24 +86,24 @@ class Square:
     #        string += "\n"
     #    return string[:-1]
 
-    #def __str__(self):
-    #    """Defines the print() of a square"""
-    #    if self.__size != 0:
-    #        [print("") for i in range(0, self.__position[1])]
-    #    for i in range(0, self.__size):
-    #        print(" " * self.__position[0], end='')
-    #        print("#" * self.__size, end='')
-    #        if i != self.__size - 1:
-    #            print("")
-    #    return ("")
     def __str__(self):
-        if self.__size == 0:
-            print()
-            return
-        else:
-            for j in range(0, self.__position[1]):
-                print()
-            for i in range(self.__size):
-                print(" " * self.__position[0], end='')
-                print("#" * self.__size)
-            return ""
+        """Defines the print() of a square"""
+        if self.__size != 0:
+            [print("") for i in range(0, self.__position[1])]
+        for i in range(0, self.__size):
+            print(" " * self.__position[0], end='')
+            print("#" * self.__size, end='')
+            if i != self.__size - 1:
+                print("")
+        return ("")
+    #def __str__(self):
+    #    if self.__size == 0:
+    #        print()
+    #        return
+    #    else:
+    #        for j in range(0, self.__position[1]):
+    #            print()
+    #        for i in range(self.__size):
+    #            print(" " * self.__position[0], end='')
+    #            print("#" * self.__size)
+    #        return ""
