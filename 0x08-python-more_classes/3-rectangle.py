@@ -70,4 +70,4 @@ class Rectangle:
                 print("#" * self.__width, end='')
                 if i != self.__height - 1:
                     print("")
-            return ""
+        return ""
