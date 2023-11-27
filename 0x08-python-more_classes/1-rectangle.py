@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-# 1-rectangle.py
-# Mai Elyamani <mai.elyamni@gmail.com>
 """
 This is 1-rectangle module
 
-This module defines a simple rectangle by an integer width and height.
+This module defines a simple rectangle by an integer width and height
+Default width and height are 0, and raises errors on invalid input
+Methods getter and setter for width and height attributes.
 """
 
 
