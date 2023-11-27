@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This is a rectangle module.
+This is a "Rectangle" module.
 
 This module defines a simple rectangle by an integer width and height
 Default width and height are 0, and raises errors on invalid input
