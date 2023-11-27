@@ -63,11 +63,12 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
+        """Returns a string representation if the rectangle represented by #"""
         if self.__width == 0 or self.__height == 0:
-            print()
+            return ""
         else:
             for i in range(0, self.__height):
                 print("#" * self.__width, end='')
                 if i != self.__height - 1:
                     print("")
-        return ""
+            return ""
