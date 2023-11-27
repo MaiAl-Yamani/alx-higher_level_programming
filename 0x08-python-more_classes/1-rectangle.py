@@ -11,7 +11,8 @@ Methods getter and setter for width and height attributes.
 class Rectangle:
     """A Recyangle class defined by its width and height."""
     def __init__(self, width=0, height=0):
-        """Initialize a new rectangle.
+        """
+        Initialize a new rectangle.
 
         Args:
             width (int): width of the rectangle.
