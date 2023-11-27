@@ -1,7 +1,11 @@
 #!/usr/bin/python3
 # 1-rectangle.py
 # Mai Elyamani <mai.elyamni@gmail.com>
-"""This is 1-rectangle module."""
+"""
+This is 1-rectangle module
+
+This module defines a simple rectangle by an integer width and height.
+"""
 
 
 class Rectangle:
