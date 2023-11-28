@@ -80,7 +80,7 @@ class Rectangle:
                 try:
                     print(str(self.print_symbol) * self.__width, end='')
                 except Exception:
-                    print(type(self).print_symbol * self.__width, end ='')
+                    print(type(self).print_symbol * self.__width, end='')
                 if i != self.__height - 1:
                     print("")
             return ""
