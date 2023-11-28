@@ -9,8 +9,7 @@ Default width and height are 0, and raises errors on invalid input
 Methods getter and setter for width and height attributes
 Method area that returns area of the rectangle
 Method perimeter that returns perimeter of the rectangle
-Magic method __str__ handling
-Magic method __repr__ handling
+Magic methods __str__ and __repr__ handling
 Method Print a message when an instance is deleted
 Static Method bigger_or_equal returns biggest rectangle based on area
 Class Method square that returns a rectangle with width = height = size.
@@ -109,4 +108,4 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         """Returns a rectangle with width = height = size"""
-        return Rectangle(size, size)
+        return cls(size, size)
