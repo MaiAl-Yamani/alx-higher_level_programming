@@ -77,10 +77,7 @@ class Rectangle:
             return ""
         else:
             for i in range(0, self.__height):
-                try:
-                    print(str(self.print_symbol) * self.__width, end='')
-                except Exception:
-                    print(type(self).print_symbol * self.__width, end='')
+                print(str(self.print_symbol) * self.__width, end='')
                 if i != self.__height - 1:
                     print("")
             return ""
@@ -111,4 +108,5 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         """Returns a rectangle with width = height = size"""
-        return cls(width=size, height=size)
+        new_rect = Rectangle(size, size)
+        return new_rect
