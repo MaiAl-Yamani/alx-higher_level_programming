@@ -77,8 +77,11 @@ class Rectangle:
             return ""
         else:
             for i in range(0, self.__height):
-                print(str(self.print_symbol) * self.__width, end='')
-                if i != self.__height - 1:
+                try:
+                    print(str(self.print_symbol) * self.__width, end='')
+                except Exception:
+                    print(type(self).print_symbol * self.__width, end ='')
+                if i is not self.__height - 1:
                     print("")
             return ""
 
