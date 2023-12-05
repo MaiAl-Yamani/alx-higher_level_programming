@@ -91,3 +91,35 @@ Traceback (most recent call last):
   File "/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 8, in lazy_matrix_mul
     return np.dot(m_a, m_b)
 ValueError: shapes (2,2) and (3,3) not aligned: 2 (dim 1) != 3 (dim 0)
+>>> a = "Holberton"   
+>>> b = [[5, 6], [7, 8]]
+>>> lazy_matrix_mul(a, b)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 8, in lazy_matrix_mul
+    return np.dot(m_a, m_b)
+TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U9') dtype('<U9') dtype('<U9')
+>>> a = [[5, 6], [7, 8]]
+>>> b = "Holberton"
+>>> lazy_matrix_mul(a, b)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 8, in lazy_matrix_mul
+    return np.dot(m_a, m_b)
+TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U9') dtype('<U9') dtype('<U9')
+>>> a = [[5, "6"], [7, 8]]       
+>>> b = [[5, 6], [7, 8]]
+>>> lazy_matrix_mul(a, b)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 8, in lazy_matrix_mul
+    return np.dot(m_a, m_b)
+ValueError: data type must provide an itemsize
+>>> a = [[5, 6], [7, 8]]
+>>> b = [[5, "6"], [7, 8]]
+>>> lazy_matrix_mul(a, b)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 8, in lazy_matrix_mul
+    return np.dot(m_a, m_b)
+ValueError: data type must provide an itemsize
