@@ -1,0 +1,91 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> m = __import__("7-base_geometry").__doc__
+>>> len(m) > 1
+True
+>>> c = __import__("7-base_geometry").BaseGeometry.__doc__
+>>> len(c) > 1
+True
+>>> method1 = __import__("7-base_geometry").BaseGeometry.area.__doc__
+>>> len(method1) > 1
+True
+>>> method2 = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+>>> len(method2) > 1
+True
+>>> b = BaseGeometry()
+>>> b.area()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/root/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 9, in area
+    raise Exception("area() is not implemented")
+Exception: area() is not implemented
+>>> b.area(1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: area() takes 1 positional argument but 2 were given
+>>> b.integer_validator("integer", 1)
+>>> b.integer_validator("integer", 0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/root/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 24, in integer_validator
+    raise ValueError("{} must be greater than 0".format(name))
+ValueError: integer must be greater than 0
+>>> b.integer_validator("integer", -5)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/root/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 24, in integer_validator
+    raise ValueError("{} must be greater than 0".format(name))
+ValueError: integer must be greater than 0
+>>> b.integer_validator("bool", True)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/root/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 22, in integer_validator
+    raise TypeError("{} must be an integer".format(name))
+TypeError: bool must be an integer
+>>> b.integer_validator("float", 3.4)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/root/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 22, in integer_validator
+    raise TypeError("{} must be an integer".format(name))
+TypeError: float must be an integer
+>>> b.integer_validator("string", "hi")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/root/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 22, in integer_validator
+    raise TypeError("{} must be an integer".format(name))
+TypeError: string must be an integer
+>>> b.integer_validator("tuple", (3, 4))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/root/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 22, in integer_validator
+    raise TypeError("{} must be an integer".format(name))
+TypeError: tuple must be an integer
+>>> b.integer_validator("list", [3, 4, 5])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/root/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 22, in integer_validator
+    raise TypeError("{} must be an integer".format(name))
+TypeError: list must be an integer
+>>> b.integer_validator("dict", {"key": "value"})
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/root/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 22, in integer_validator
+    raise TypeError("{} must be an integer".format(name))
+TypeError: dict must be an integer
+>>> b.integer_validator("set", {"hello", "world"})
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/root/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 22, in integer_validator
+    raise TypeError("{} must be an integer".format(name))
+TypeError: set must be an integer
+>>> b.integer_validator()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+>>> b.integer_validator("integer")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+>>> b.integer_validator("integer", 1, 2)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
