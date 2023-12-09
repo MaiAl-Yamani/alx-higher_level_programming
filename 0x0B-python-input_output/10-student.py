@@ -17,6 +17,6 @@ class Student:
         if type(attrs) is list and all(type(key) is str for key in attrs):
             for key in attrs:
                 if key in self.__dict__:
-                    new.update({key: self.__dict__[key]})
-                return new
-        return self.__dict__.copy()
+                    new[key] = self.__dict__[key]
+            return new
+        return self.__dict__
