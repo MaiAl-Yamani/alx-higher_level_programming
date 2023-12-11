@@ -20,7 +20,7 @@ class Square(Rectangle):
     @size.setter
     def size(self, size):
         """size attribute setter."""
-        self.integer_validator("size", size)
+        self.integer_validator("width", size)
         self.__size = size
 
     def __str__(self):
