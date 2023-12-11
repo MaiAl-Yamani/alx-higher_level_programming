@@ -100,8 +100,21 @@ class Rectangle(Base):
         string += str(self.__width) + "/" + str(self.__height)
         return string
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Assigns an argument to each attribute."""
+        if not args or args is None:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                if key == "width":
+                    self.width = value
+                if key == "height":
+                    self.height = value
+                if key == "x":
+                    self.x = value
+                if key == "y":
+                    self.y = value
+
         for i in range(len(args)):
             if i == 0:
                 self.id = args[i]
