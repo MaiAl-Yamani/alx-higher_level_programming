@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """This is rectangle.py module."""
-import json
 from models.base import Base
 
 
