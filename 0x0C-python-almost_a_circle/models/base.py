@@ -37,14 +37,6 @@ class Base:
                     my_list.append(list_objs[i].to_dictionary())
                 f.write(cls.to_json_string(my_list))
 
-    """
-            f.write("[")
-            for i in range(len(list_objs)):
-                f.write(cls.to_json_string(list_objs[i].to_dictionary()))
-                if i != len(list_objs) - 1:
-                    f.write(", ")
-            f.write("]")
-    """
     @staticmethod
     def from_json_string(json_string):
         """Returns the list of the JSON string representation json_string."""
