@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This is base.py module."""
 import json
+import os.path
 
 
 class Base:
@@ -57,6 +58,8 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """Returns a list of instances."""
+        if not os.path.exists(cls.__name__ + ".json"):
+            return []
         filename = str(cls.__name__) + ".json"
         with open(filename, encoding="utf-8") as f:
             my_dicts_list = cls.from_json_string(f.read())
