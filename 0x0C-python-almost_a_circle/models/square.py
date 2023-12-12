@@ -8,8 +8,7 @@ class Square(Rectangle):
 
     def __init__(self, size, x=0, y=0, id=None):
         """Instantiation method."""
-        self.integer_validator("size", size)
-        self.size = size
+        self.integer_validator("width", size)
         super().__init__(size, size, x, y, id)
 
     @property
