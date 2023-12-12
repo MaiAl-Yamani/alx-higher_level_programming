@@ -2,6 +2,7 @@
 """This is base.py module."""
 import json
 import os.path
+import csv
 
 
 class Base:
@@ -65,3 +66,37 @@ class Base:
             my_dicts_list = cls.from_json_string(f.read())
             instances = [cls.create(**my_dict) for my_dict in my_dicts_list]
         return instances
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """save to csv file."""
+        filename = cls.__name__ + ".csv"
+        if cls.__name__ == "Rectangle":
+            csv_format = ["id", "width", "height", "x", "y"]
+        if cls.__name__ == "Square":
+            csv_format = ["id", "size", "x", "y"]
+
+        with open(filename, mode="w") as data_file:
+            writer = csv.DictWriter(data_file, fieldnames=csv_format)
+            [writer.writerow(item.to_dictionary()) for item in list_objs]
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """load from csv file."""
+        filename = cls.__name__ + ".csv"
+        if not os.path.exists(filename):
+            return []
+        ret_list = []
+        my_dict_csv = {}
+        if cls.__name__ == "Rectangle":
+            csv_format = ['id', 'width', 'height', 'x', 'y']
+        else:
+            csv_format = ['id', 'size', 'x', 'y']
+
+        with open(filename, mode="r") as fd:
+            reader = csv.DictReader(fd, fieldnames=csv_format)
+            for item in reader:
+                for key in item:
+                    my_dict_csv[key] = int(item[key])
+                ret_list.append(cls.create(**my_dict_csv))
+        return ret_list
