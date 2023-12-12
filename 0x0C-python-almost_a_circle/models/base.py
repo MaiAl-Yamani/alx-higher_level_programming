@@ -34,7 +34,7 @@ class Base:
 
             f.write("[")
             for i in range(len(list_objs)):
-                f.write(Base.to_json_string(list_objs[i].to_dictionary()))
+                f.write(cls.to_json_string(list_objs[i].to_dictionary()))
                 if i != len(list_objs) - 1:
                     f.write(", ")
             f.write("]")
