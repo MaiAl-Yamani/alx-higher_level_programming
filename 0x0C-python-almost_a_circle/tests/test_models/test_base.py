@@ -7,6 +7,7 @@ from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
 import unittest, json
+import os
 
 
 class TestBaseClass(unittest.TestCase):
@@ -145,6 +146,28 @@ class TestBaseClass(unittest.TestCase):
         rt_create = Rectangle.create(**rt_dict)
         self.assertEqual(self.rt3.__str__(), '[Rectangle] (100) 3/3 - 30/30')
 
+    def test_load_file(self):
+        """test load from file method"""
+        self.assertTrue(os.path.isfile('Rectangle.json'))
+        with open('Rectangle.json') as f:
+            for line in f:
+                self.assertEqual(type(line), str)
+
+            list_of_obj = [self.rt1, self.rt2, self.rt3]
+            for obj in list_of_obj:
+                self.assertIsInstance(obj, Rectangle)
+                self.assertIsInstance(obj, Base)
+
+            list_of_output = Rectangle.load_from_file()
+            for rect in list_of_output:
+                self.assertIsInstance(rect, Rectangle)
+            
+            Rectangle.save_to_file(list_of_obj)
+            with open('Rectangle.json', mode='r') as f:
+                count = 0
+                for line in f:
+                    count += 1
+                self.assertGreater(count, 0)
 
 if __name__ == '__main__':
         unittest.main()

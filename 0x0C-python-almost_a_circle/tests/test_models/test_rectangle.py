@@ -1,0 +1,17 @@
+#!/usr/bin/python3
+"""
+Unittests for Base Class
+"""
+import unittest, json
+from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
+
+
+class TestBaseClass(unittest.TestCase):
+    """Test Class"""
+
+    @classmethod
+    def setClass(cls):
+        """Test instantiate"""
+        cls.one = Base()
