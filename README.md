@@ -44,6 +44,6 @@ Each directory contains a separate set of coursework tasks. There is no single a
 
 ## Context
 
-This repository contains **structured ALX coursework**, not a single independently designed product. It demonstrates practice with language fundamentals and programming concepts, with an emphasis on Python.
+This repository documents my programming work during the ALX Software Engineering Programme, focusing on Python, object-oriented programming, data structures, testing, SQL, and JavaScript.
 
-Part of my ALX Software Engineering coursework. See also [Low-Level Programming](https://github.com/MaiAl-Yamani/alx-low_level_programming) and [System Engineering & DevOps](https://github.com/MaiAl-Yamani/alx-system_engineering-devops).
+Related repositories: [Low-Level Programming](https://github.com/MaiAl-Yamani/alx-low_level_programming) | [System Engineering & DevOps](https://github.com/MaiAl-Yamani/alx-system_engineering-devops)
